@@ -20,3 +20,7 @@ Calculator made in Html, Css and JavaScript
 <ul>
 <li> You Tell ME</li>
 </ul>
+<h1>Contributions</h1>
+<ul>
+  <li>Accepted</li>
+</ul>
