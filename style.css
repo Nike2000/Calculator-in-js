@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  font-family: sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: white;
 }
 
@@ -17,16 +17,23 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 #container {
   background-color: white;
-  height: 70vh;
+  height: 69vh;
   width: 27vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  overflow: hidden;
 }
+
+input[type="text"] {
+  cursor: default;
+}
+
 #values {
   width: 100%;
   height: 10%;
@@ -48,27 +55,53 @@ body {
   font-size: 25px;
   color: rgb(99, 99, 99);
 }
+
+/* -------------------- calc section -------------------- */
+#calc {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------------- number section ------------------- */
 #number-btns {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
   grid-area: 3px;
-  width: 100%;
-  height: 80%;
+  width: 60%;
+  height: 100%;
   background-color: aliceblue;
   border-radius: 10px;
 }
 .btns {
   font-weight: bold;
   text-align: center;
-  font-size: 25px;
+  font-size: 23px;
   border: 2px solid rgb(167, 167, 167, 0.1);
   color: rgb(48, 48, 48);
   background-color: aliceblue;
-  border-radius: 10px;
 }
 .btns:hover {
   background-color: rgba(196, 228, 255, 0.568);
 }
+
+/* ------------------ operators section ----------------- */
+#operators {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-area: 3px;
+  width: 40%;
+  height: 100%;
+  background-color: aliceblue;
+  border-left: 1px solid rgb(206, 206, 255);
+}
+
+#operators > .btns {
+  font-size: 26px;
+  color: blue;
+}
+
+/* ------------------------ btns ------------------------ */
 #btn-add {
   grid-row: span 2;
 }
@@ -76,13 +109,34 @@ body {
   grid-column: span 2;
 }
 #btn-clr {
-  grid-row: span 2;
+  background-color: rgb(255, 50, 50);
+  color: white;
+  transition: 0.3s;
+}
+#btn-del {
+  background-color: rgb(93, 93, 255);
+  color: white !important;
+  transition: 0.3s;
+}
+#btn-clr:hover {
+  background-color: rgb(255, 16, 16);
+}
+
+#btn-del:hover {
+  background-color: rgb(40, 40, 255);
+}
+
+@media (max-width: 1400px) {
+  #container {
+    height: 69vh;
+    width: 31vw;
+  }
 }
 
 /* SCREEN SIZE LESS THAN 900px - Tablets*/
 @media (max-width: 900px) {
   #container {
-    height: 65vh;
+    height: 70vh;
     width: 45vw;
   }
 }
@@ -90,7 +144,7 @@ body {
 /* SCREEN SIZE LESS THAN 500px - MOBILES */
 @media (max-width: 500px) {
   #container {
-    height: 55vh;
-    width: 70vw;
+    height: 62vh;
+    width: 67vw;
   }
 }

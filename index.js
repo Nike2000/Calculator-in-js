@@ -14,8 +14,8 @@ function calc(val) {
     }
 
     // prevents from adding operators one after other, either same or different
-    if(opr.includes(min_2)){
-        if(opr.includes(min_1)){
+    if (opr.includes(min_2)) {
+        if (opr.includes(min_1)) {
             document.getElementById('values').value = a.slice(0, -1)
         }
     }
@@ -32,4 +32,10 @@ function solve() {
 function clr() {
     document.getElementById('values').value = "";
     document.getElementById('result').value = "";
+}
+
+//delets one item
+function del() {
+    let val = document.querySelector('#values').value.slice(0,-1);
+    document.querySelector('#values').value = val;
 }
